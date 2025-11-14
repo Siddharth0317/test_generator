@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pydantic
+spacy
+streamlit
+pandas
+reportlab
+selenium
+pytest
+scikit-learn
+requests
