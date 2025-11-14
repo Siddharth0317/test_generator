@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sample Site - Demo</title>
+  <style>
+    #dashboard { display: none; margin-top: 20px; }
+    #confirmation { display: none; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>Sample Login</h2>
+  <form id="loginForm">
+    <label>Username: <input id="username_field" type="text" /></label><br/>
+    <label>Password: <input id="password_field" type="password" /></label><br/>
+    <button id="login_button" type="button" onclick="login()">Login</button>
+  </form>
+
+  <div id="dashboard">
+    <h3>Welcome to Dashboard</h3>
+    <p>Login successful.</p>
+  </div>
+
+  <h2>Sample Registration</h2>
+  <form id="regForm">
+    <label>Name: <input id="name_field" type="text" /></label><br/>
+    <label>Email: <input id="email_field" type="email" /></label><br/>
+    <button id="register_button" type="button" onclick="registerUser()">Register</button>
+  </form>
+  <div id="confirmation">
+    <p>Registration complete.</p>
+  </div>
+
+  <h2>Sample Search</h2>
+  <input id="search_box" type="text" placeholder="Search..." />
+  <button id="search_button" onclick="doSearch()">Search</button>
+  <div id="results"></div>
+
+  <script>
+    function login(){
+      var user = document.getElementById('username_field').value;
+      var pass = document.getElementById('password_field').value;
+      if(user && pass){
+        document.getElementById('loginForm').style.display='none';
+        document.getElementById('dashboard').style.display='block';
+      } else {
+        alert('enter username and password');
+      }
+    }
+    function registerUser(){
+      var name = document.getElementById('name_field').value;
+      var email = document.getElementById('email_field').value;
+      if(name && email){
+        document.getElementById('regForm').style.display='none';
+        document.getElementById('confirmation').style.display='block';
+      } else {
+        alert('enter name and email');
+      }
+    }
+    function doSearch(){
+      var q = document.getElementById('search_box').value;
+      document.getElementById('results').innerText = "Results for: " + q;
+    }
+  </script>
+</body>
+</html>
